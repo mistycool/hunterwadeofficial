@@ -2,93 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hunter Wade — Official</title>
   <meta name="description" content="Hunter Wade — dark outlaw country forged in loss, fire, and survival." />
   <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#0b0b0b" />
 </head>
 
 <body>
-  <!-- Blurred cinematic background -->
-  <div class="bg" aria-hidden="true">
-    <img src="hero.jpeg" alt="" />
-    <div class="bg-overlay"></div>
-    <div class="bg-vignette"></div>
-  </div>
+  <!-- Background -->
+  <div class="bg" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
   <main class="wrap">
-    <section class="card" role="region" aria-label="Hunter Wade links">
+    <section class="card" role="region" aria-label="Hunter Wade Links">
+
       <header class="top">
-        <div class="avatar" aria-hidden="true">
-          <img src="hero.jpeg" alt="" />
+        <div class="badge" aria-label="Hunter Wade">HW</div>
+
+        <div class="titleBlock">
+          <h1>Hunter Wade</h1>
+          <p class="tagline">Dark outlaw country — forged in loss, fire, and survival.</p>
         </div>
-
-        <h1>Hunter Wade</h1>
-        <p class="tagline">Dark outlaw country — forged in loss, fire, and survival.</p>
       </header>
-
-      <div class="links" role="list">
-        <a class="btn" role="listitem" href="https://open.spotify.com/artist/49tmro22O9gVMSERh0OFHw" target="_blank" rel="noopener">
-          <span class="ico" aria-hidden="true">
-            <!-- Spotify -->
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.59 14.365a.75.75 0 0 1-1.03.25c-2.824-1.724-6.381-2.115-10.573-1.162a.75.75 0 0 1-.333-1.462c4.57-1.04 8.48-.59 11.686 1.366a.75.75 0 0 1 .25 1.008zm.884-2.36a.9.9 0 0 1-1.237.3c-3.235-1.983-8.169-2.557-12.0-1.394a.9.9 0 1 1-.522-1.722c4.37-1.324 9.79-.682 13.55 1.62a.9.9 0 0 1 .209 1.196zm.1-2.46C13.8 9.367 7.57 9.17 4.34 10.165a1.05 1.05 0 1 1-.616-2.008c3.71-1.137 10.72-.918 15.26 1.78a1.05 1.05 0 0 1-1.072 1.808z"/></svg>
-          </span>
-          <span class="label">Spotify</span>
-          <span class="dots" aria-hidden="true">•••</span>
-        </a>
-
-        <a class="btn" role="listitem" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">
-          <span class="ico" aria-hidden="true">
-            <!-- Apple Music -->
-            <svg viewBox="0 0 24 24"><path d="M16.365 1.43c0 1.14-.435 2.204-1.14 3.008-.75.855-1.965 1.51-3.12 1.42-.13-1.085.35-2.205 1.05-2.99.76-.845 2.08-1.52 3.21-1.438zM20 17.02c-.52 1.19-.77 1.72-1.45 2.77-.95 1.43-2.3 3.21-3.97 3.22-1.48.01-1.86-.96-3.88-.95-2.02.01-2.44.97-3.93.95-1.67-.02-2.95-1.64-3.9-3.07-2.65-3.98-2.93-8.64-1.29-11.17 1.16-1.8 2.99-2.85 4.71-2.85 1.74 0 2.84.95 4.28.95 1.4 0 2.25-.95 4.26-.95 1.53 0 3.15.83 4.3 2.25-3.78 2.07-3.17 7.43.86 8.9z"/></svg>
-          </span>
-          <span class="label">Apple Music</span>
-          <span class="dots" aria-hidden="true">•••</span>
-        </a>
-
-        <a class="btn" role="listitem" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">
-          <span class="ico" aria-hidden="true">
-            <!-- iTunes (use a simple note icon) -->
-            <svg viewBox="0 0 24 24"><path d="M19 3v14.5a3.5 3.5 0 1 1-2-3.163V7.26L9 9v9.5a3.5 3.5 0 1 1-2-3.163V6l12-3z"/></svg>
-          </span>
-          <span class="label">iTunes</span>
-          <span class="dots" aria-hidden="true">•••</span>
-        </a>
-
-        <a class="btn" role="listitem" href="https://www.youtube.com/@HunterWadeOfficial" target="_blank" rel="noopener">
-          <span class="ico" aria-hidden="true">
-            <!-- YouTube -->
-            <svg viewBox="0 0 24 24"><path d="M21.58 7.19a2.5 2.5 0 0 0-1.76-1.77C18.25 5 12 5 12 5s-6.25 0-7.82.42A2.5 2.5 0 0 0 2.42 7.2 26.3 26.3 0 0 0 2 12a26.3 26.3 0 0 0 .42 4.81 2.5 2.5 0 0 0 1.76 1.77C5.75 19 12 19 12 19s6.25 0 7.82-.42a2.5 2.5 0 0 0 1.76-1.77A26.3 26.3 0 0 0 22 12a26.3 26.3 0 0 0-.42-4.81zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
-          </span>
-          <span class="label">YouTube</span>
-          <span class="dots" aria-hidden="true">•••</span>
-        </a>
-      </div>
 
       <div class="divider"></div>
 
-      <section class="follow" aria-label="Follow">
+      <nav class="links" aria-label="Official links">
+        <a class="link" href="https://open.spotify.com/artist/49tmro22O9gVMSERh0OFHw" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">
+            <!-- Spotify -->
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 1.8c5.6 0 10.2 4.6 10.2 10.2S17.6 22.2 12 22.2 1.8 17.6 1.8 12 6.4 1.8 12 1.8Z" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M7.1 10.4c3.6-1.1 7.2-.7 10.6 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M7.7 13c3-0.8 6-.5 8.7.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".9"/>
+              <path d="M8.3 15.5c2.2-0.6 4.4-.3 6.3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".8"/>
+            </svg>
+          </span>
+          <span class="label">Spotify</span>
+          <span class="pill">Follow</span>
+        </a>
+
+        <a class="link" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">
+            <!-- Apple Music -->
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M16.7 13.3V6.2c0-.9.7-1.6 1.6-1.6h.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M16.7 6.2l-7.9 1.7v10.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7.2 19.3c1.2 0 2.2-.8 2.2-1.8s-1-1.8-2.2-1.8-2.2.8-2.2 1.8 1 1.8 2.2 1.8Z" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M14.8 18.7c1.2 0 2.2-.8 2.2-1.8s-1-1.8-2.2-1.8-2.2.8-2.2 1.8 1 1.8 2.2 1.8Z" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+          </span>
+          <span class="label">Apple Music</span>
+          <span class="pill">Listen</span>
+        </a>
+
+        <a class="link" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">
+            <!-- iTunes (simple note icon) -->
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M16.4 6.3 8.8 8v9.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16.4 14.6V6.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M7.4 19.2c1.2 0 2.2-.8 2.2-1.8s-1-1.8-2.2-1.8-2.2.8-2.2 1.8 1 1.8 2.2 1.8Z" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M14.6 18.6c1.2 0 2.2-.8 2.2-1.8s-1-1.8-2.2-1.8-2.2.8-2.2 1.8 1 1.8 2.2 1.8Z" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+          </span>
+          <span class="label">iTunes</span>
+          <span class="pill">Buy</span>
+        </a>
+
+        <a class="link" href="https://www.youtube.com/@HunterWadeOfficial" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">
+            <!-- YouTube -->
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M20.7 8.2a3 3 0 0 0-2.1-2.1C16.8 5.6 12 5.6 12 5.6s-4.8 0-6.6.5A3 3 0 0 0 3.3 8.2 31 31 0 0 0 3 12a31 31 0 0 0 .3 3.8 3 3 0 0 0 2.1 2.1c1.8.5 6.6.5 6.6.5s4.8 0 6.6-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 21 12a31 31 0 0 0-.3-3.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M10.4 9.6 15 12l-4.6 2.4V9.6Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="label">YouTube</span>
+          <span class="pill">Watch</span>
+        </a>
+      </nav>
+
+      <div class="divider"></div>
+
+      <section class="mini">
         <h2>Follow</h2>
-        <div class="social">
-          <!-- Replace the # with your real links tonight -->
-          <a class="chip" href="#" target="_blank" rel="noopener">Instagram</a>
-          <a class="chip" href="#" target="_blank" rel="noopener">TikTok</a>
-          <a class="chip" href="#" target="_blank" rel="noopener">Facebook</a>
+        <div class="miniRow">
+          <!-- Replace # with your real links tonight -->
+          <a class="miniBtn" href="#" target="_blank" rel="noopener">Instagram</a>
+          <a class="miniBtn" href="#" target="_blank" rel="noopener">TikTok</a>
+          <a class="miniBtn" href="#" target="_blank" rel="noopener">Facebook</a>
         </div>
       </section>
 
+      <section class="contact">
+        <h2>Contact / Booking</h2>
+        <a class="email" href="mailto:contact@hunterwadeofficial.com">contact@hunterwadeofficial.com</a>
+      </section>
+
       <footer class="foot">
-        <div class="contact">
-          <span>Contact / Booking</span>
-          <a href="mailto:contact@hunterwadeofficial.com">contact@hunterwadeofficial.com</a>
-        </div>
-        <div class="mini">© <span id="y"></span> Hunter Wade</div>
+        <span>© <span id="year"></span> Hunter Wade</span>
       </footer>
     </section>
   </main>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
