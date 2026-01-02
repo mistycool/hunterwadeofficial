@@ -25,7 +25,6 @@ body{
     #000;
 }
 
-
 .page{
   min-height:100%;
   display:grid;
@@ -240,11 +239,13 @@ body{
   color: rgba(255,255,255,.45);
   font-size: 12px;
 }
+
+/* QR FLOAT — fixed bottom-left ALWAYS (follows while scrolling) */
 .qr-float{
   position: fixed;
-  right: 18px;
+  left: 18px;
   bottom: 18px;
-  z-index: 999;
+  z-index: 9999;
   display: grid;
   gap: 10px;
   text-decoration: none;
@@ -256,7 +257,8 @@ body{
   letter-spacing: .12em;
   text-transform: uppercase;
   color: rgba(255,255,255,.70);
-  padding-lright: 2px;
+  padding-left: 2px;
+  text-shadow: 0 10px 30px rgba(0,0,0,.7);
 }
 
 .qr-float img{
@@ -269,7 +271,8 @@ body{
   border: 1px solid rgba(255,255,255,.12);
 }
 
-/* Hide on small screens (phones already ARE mobile) */
-@media (max-width: 520px){
-  .qr-float{ display:none; }
+/* Mobile polish */
+@media (max-width: 460px){
+  .hero{ height: 190px; }
+  .title{ font-size: 24px; }
 }
