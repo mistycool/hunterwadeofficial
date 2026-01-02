@@ -39,12 +39,12 @@ body{
   position:relative;
 }
 
-/* HERO IMAGE — this MUST be relative for GitHub Pages under /hunterwadeofficial/ */
+/* HERO IMAGE — GitHub Pages absolute path (most reliable) */
 .hero{
   height: 210px;
   background:
     linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.92)),
-    url("./hero.jpeg?v=2") center/cover no-repeat;
+    url("/hunterwadeofficial/hero.jpeg") center/cover no-repeat;
 }
 
 .header{
@@ -87,6 +87,7 @@ body{
 }
 
 .link{
+  position:relative;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -98,13 +99,41 @@ body{
   background: rgba(255,255,255,.04);
   box-shadow: 0 12px 40px rgba(0,0,0,.28);
   transition: transform .12s ease, border-color .12s ease, background .12s ease, box-shadow .12s ease;
+  overflow:hidden;
+}
+
+/* Fire glow + subtle animated flicker on hover */
+.link::after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:
+    radial-gradient(420px 120px at 15% 50%, rgba(255,122,26,.18), rgba(0,0,0,0) 60%),
+    radial-gradient(420px 120px at 85% 50%, rgba(200,106,42,.14), rgba(0,0,0,0) 60%);
+  opacity:0;
+  transition: opacity .16s ease;
+  pointer-events:none;
+}
+
+@keyframes fireFlicker{
+  0%   { transform: translateY(0px);   opacity:.55; }
+  50%  { transform: translateY(-1px);  opacity:.75; }
+  100% { transform: translateY(0px);   opacity:.55; }
 }
 
 .link:hover{
   transform: translateY(-1px);
   border-color: rgba(255,122,26,.28);
   background: rgba(255,255,255,.06);
-  box-shadow: 0 16px 55px rgba(0,0,0,.35), 0 0 0 1px rgba(255,122,26,.12);
+  box-shadow:
+    0 12px 40px rgba(0,0,0,.28),
+    0 0 0 1px rgba(255,122,26,.12),
+    0 0 26px rgba(255,122,26,.10);
+}
+
+.link:hover::after{
+  opacity:1;
+  animation: fireFlicker .9s infinite ease-in-out;
 }
 
 .left{
@@ -112,23 +141,26 @@ body{
   align-items:center;
   gap:10px;
   min-width: 0;
+  position:relative;
+  z-index:1;
 }
 
 .icon{
   width:26px;
   height:26px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  opacity:.92;
+  display:grid;
+  place-items:center;
+  opacity:.95;
+}
+.icon svg{
+  width:26px;
+  height:26px;
+  display:block;
 }
 
-/* SVG icon styling (official-looking, consistent) */
-.icon svg{
-  width:22px;
-  height:22px;
-  display:block;
-  fill: currentColor;
+/* Icon glow on hover */
+.link:hover .icon svg{
+  filter: drop-shadow(0 0 10px rgba(255,122,26,.25));
 }
 
 .name{
@@ -137,6 +169,8 @@ body{
 }
 
 .pill{
+  position:relative;
+  z-index:1;
   padding: 7px 12px;
   border-radius: 999px;
   font-size: 12px;
@@ -145,14 +179,6 @@ body{
   color: rgba(255,255,255,.90);
   border: 1px solid rgba(255,122,26,.25);
   background: rgba(200,106,42,.10);
-  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-}
-
-/* subtle animated fire glow on hover */
-.link:hover .pill{
-  border-color: rgba(255,122,26,.45);
-  box-shadow: 0 0 18px rgba(255,122,26,.18);
-  transform: translateY(-1px);
 }
 
 .follow{
@@ -185,7 +211,7 @@ body{
   transform: translateY(-1px);
   border-color: rgba(255,122,26,.26);
   background: rgba(255,255,255,.05);
-  box-shadow: 0 0 18px rgba(255,122,26,.10);
+  box-shadow: 0 0 18px rgba(255,122,26,.08);
 }
 
 .footer{
