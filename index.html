@@ -2,109 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hunter Wade — Official</title>
   <meta name="description" content="Hunter Wade — dark outlaw country forged in loss, fire, and survival." />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
 </head>
 
 <body>
   <main class="page">
-    <section class="card" aria-label="Hunter Wade official links">
-      <div class="hero" aria-hidden="true">
-        <!-- IMPORTANT: file must be named exactly hero.jpeg in the same folder -->
-        <img class="hero-img" src="hero.jpeg?v=1" alt="" />
-        <div class="hero-overlay"></div>
-      </div>
+    <section class="card" aria-label="Hunter Wade links">
+      <div class="hero" role="img" aria-label="Hunter Wade cinematic hero image"></div>
 
       <header class="header">
         <div class="badge" aria-hidden="true">HW</div>
-        <div class="title-block">
-          <h1>HUNTER WADE</h1>
+        <div class="titlewrap">
+          <h1 class="title">HUNTER WADE</h1>
           <p class="tagline">Dark outlaw country — forged in loss, fire, and survival.</p>
         </div>
       </header>
 
-      <section class="links" aria-label="Listen and follow">
+      <nav class="links" aria-label="Music platforms">
         <a class="link" href="https://open.spotify.com/artist/49tmro22O9gVMSERh0OFHw" target="_blank" rel="noopener">
           <span class="left">
-            <span class="icon" aria-hidden="true">🎧</span>
-            <span class="label">Spotify</span>
+            <span class="icon" aria-hidden="true">⦿</span>
+            <span class="name">Spotify</span>
           </span>
-          <span class="pill">Open</span>
-        </a>
-
-        <a class="link" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">
-          <span class="left">
-            <span class="icon" aria-hidden="true"></span>
-            <span class="label">Apple Music</span>
-          </span>
-          <span class="pill">Open</span>
+          <span class="pill">Follow</span>
         </a>
 
         <a class="link" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">
           <span class="left">
             <span class="icon" aria-hidden="true">♪</span>
-            <span class="label">iTunes</span>
+            <span class="name">Apple Music</span>
           </span>
-          <span class="pill">Open</span>
+          <span class="pill">Listen</span>
+        </a>
+
+        <a class="link" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">
+          <span class="left">
+            <span class="icon" aria-hidden="true">♫</span>
+            <span class="name">iTunes</span>
+          </span>
+          <span class="pill">Buy</span>
         </a>
 
         <a class="link" href="https://www.youtube.com/@HunterWadeOfficial" target="_blank" rel="noopener">
           <span class="left">
             <span class="icon" aria-hidden="true">▶</span>
-            <span class="label">YouTube</span>
+            <span class="name">YouTube</span>
           </span>
-          <span class="pill">Open</span>
+          <span class="pill">Watch</span>
         </a>
-      </section>
+      </nav>
 
-      <section class="follow" aria-label="Social links">
-        <h2>FOLLOW</h2>
-        <div class="socials">
-          <!-- Put your real links later (tonight). Keep # for now. -->
+      <section class="follow" aria-label="Follow Hunter Wade">
+        <h2 class="sectionTitle">FOLLOW</h2>
+        <div class="chips">
+          <!-- replace # with your real links tonight -->
           <a class="chip" href="#" target="_blank" rel="noopener">Instagram</a>
           <a class="chip" href="#" target="_blank" rel="noopener">TikTok</a>
           <a class="chip" href="#" target="_blank" rel="noopener">Facebook</a>
         </div>
       </section>
 
-      <section class="contact" aria-label="Contact">
-        <h2>CONTACT / BOOKING</h2>
-        <div class="email-row">
-          <a class="email"
-             href="mailto:contact@hunterwadeofficial.com?subject=Booking%20/%20Inquiry%20—%20Hunter%20Wade">
-            contact@hunterwadeofficial.com
-          </a>
+      <footer class="footer">
+        <h2 class="sectionTitle">CONTACT / BOOKING</h2>
 
-          <button class="copy" type="button" data-copy="contact@hunterwadeofficial.com" aria-label="Copy email">
-            Copy
-          </button>
-        </div>
+        <!-- Gmail compose (works in browser). If you want Outlook instead, tell me. -->
+        <a class="email"
+           href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@hunterwadeofficial.com&su=Booking%20%2F%20Hunter%20Wade&body=Hi%20Hunter%20Wade%20team%2C%0A%0A"
+           target="_blank" rel="noopener">
+          contact@hunterwadeofficial.com
+        </a>
 
-        <p class="fineprint">If clicking doesn’t open email on your PC, use the Copy button.</p>
-      </section>
-
-      <footer class="footer">© <span id="year"></span> Hunter Wade</footer>
+        <div class="copyright">© 2026 Hunter Wade</div>
+      </footer>
     </section>
   </main>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const btn = document.querySelector(".copy");
-    btn?.addEventListener("click", async () => {
-      const text = btn.getAttribute("data-copy") || "";
-      try {
-        await navigator.clipboard.writeText(text);
-        const old = btn.textContent;
-        btn.textContent = "Copied";
-        setTimeout(() => (btn.textContent = old), 900);
-      } catch (e) {
-        // Fallback
-        prompt("Copy this email:", text);
-      }
-    });
-  </script>
 </body>
 </html>
