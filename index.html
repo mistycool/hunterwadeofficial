@@ -4,328 +4,105 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Hunter Wade — Official</title>
-  <meta name="description" content="Hunter Wade — Dark outlaw country forged in loss, fire, and survival." />
-  <style>
-    :root{
-      --bg:#070707;
-      --panel:#0e0e0f;
-      --panel2:#101012;
-      --text:#f4f4f5;
-      --muted:#b5b5b8;
-      --line:rgba(255,255,255,.10);
-      --shadow: 0 30px 80px rgba(0,0,0,.65);
-      --accent:#ff6a1a; /* fire */
-      --accent2:#b84b14;
-      --radius:22px;
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:
-        radial-gradient(1200px 800px at 50% -10%, rgba(255,106,26,.18), transparent 60%),
-        radial-gradient(900px 600px at 0% 30%, rgba(255,106,26,.10), transparent 55%),
-        radial-gradient(900px 600px at 100% 35%, rgba(255,106,26,.08), transparent 55%),
-        var(--bg);
-      color:var(--text);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:32px 16px;
-    }
-
-    .wrap{
-      width:min(980px, 100%);
-      display:flex;
-      justify-content:center;
-    }
-
-    .card{
-      width:min(520px, 100%);
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      overflow:hidden;
-      box-shadow: var(--shadow);
-      position:relative;
-    }
-
-    /* HERO IMAGE BLOCK */
-    .hero{
-      height:210px;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.70)),
-        url("hero.jpeg");
-      background-size: cover;
-      background-position: center;
-      border-bottom: 1px solid var(--line);
-      position:relative;
-    }
-
-    /* subtle fire glow edge */
-    .hero:after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(600px 220px at 30% 0%, rgba(255,106,26,.22), transparent 60%),
-        radial-gradient(600px 220px at 80% 10%, rgba(255,106,26,.14), transparent 62%);
-      pointer-events:none;
-      mix-blend-mode: screen;
-      opacity:.9;
-    }
-
-    .content{
-      padding:18px 18px 16px;
-    }
-
-    .top{
-      display:flex;
-      gap:14px;
-      align-items:center;
-      margin-top:-36px;
-    }
-
-    .badge{
-      width:52px; height:52px;
-      border-radius:16px;
-      display:grid;
-      place-items:center;
-      font-weight:800;
-      letter-spacing:.06em;
-      color:#fff;
-      background: linear-gradient(180deg, rgba(255,106,26,.35), rgba(255,106,26,.12));
-      border:1px solid rgba(255,106,26,.28);
-      box-shadow: 0 10px 30px rgba(0,0,0,.55);
-      backdrop-filter: blur(6px);
-    }
-
-    h1{
-      margin:0;
-      font-size:28px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      line-height:1.1;
-    }
-
-    .tag{
-      margin-top:6px;
-      color:var(--muted);
-      font-size:13.5px;
-    }
-
-    .list{
-      margin-top:14px;
-      display:grid;
-      gap:12px;
-    }
-
-    .row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:14px 14px;
-      border-radius:16px;
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08);
-    }
-
-    .left{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:0;
-    }
-
-    .icon{
-      width:26px; height:26px;
-      display:grid; place-items:center;
-      opacity:.92;
-      flex:0 0 auto;
-    }
-
-    .name{
-      font-weight:700;
-      letter-spacing:.02em;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
-    .cta{
-      text-decoration:none;
-      font-weight:700;
-      font-size:12px;
-      color:#fff;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,106,26,.35);
-      background: linear-gradient(180deg, rgba(255,106,26,.18), rgba(255,106,26,.08));
-      box-shadow: 0 10px 24px rgba(0,0,0,.35);
-    }
-    .cta:hover{ border-color: rgba(255,106,26,.60); }
-
-    .sectionTitle{
-      margin:18px 2px 10px;
-      font-size:12px;
-      color:rgba(255,255,255,.55);
-      letter-spacing:.22em;
-      text-transform:uppercase;
-    }
-
-    .pillRow{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .pill{
-      text-decoration:none;
-      color:var(--text);
-      padding:9px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      font-weight:650;
-      font-size:13px;
-    }
-    .pill:hover{ border-color: rgba(255,106,26,.35); }
-
-    .contact{
-      margin-top:12px;
-      padding-top:12px;
-      border-top:1px solid rgba(255,255,255,.08);
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-
-    .contactRow{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .emailLink{
-      color:var(--accent);
-      text-decoration:none;
-      border-bottom:1px dashed rgba(255,106,26,.55);
-      padding-bottom:2px;
-      font-weight:700;
-      word-break:break-word;
-    }
-    .emailLink:hover{ border-bottom-color: rgba(255,106,26,.9); }
-
-    .copyBtn{
-      cursor:pointer;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.03);
-      color: var(--text);
-      padding:8px 12px;
-      border-radius:12px;
-      font-weight:700;
-      font-size:12px;
-    }
-    .copyBtn:hover{ border-color: rgba(255,106,26,.35); }
-
-    .foot{
-      margin-top:10px;
-      color:rgba(255,255,255,.45);
-      font-size:12px;
-    }
-
-    /* Mobile */
-    @media (max-width:420px){
-      .hero{height:190px}
-      h1{font-size:24px}
-    }
-  </style>
+  <meta name="description" content="Hunter Wade — dark outlaw country forged in loss, fire, and survival." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <div class="wrap">
-    <main class="card" aria-label="Hunter Wade Official Links">
-      <div class="hero"></div>
-
-      <div class="content">
-        <div class="top">
-          <div class="badge">HW</div>
-          <div>
-            <h1>Hunter Wade</h1>
-            <div class="tag">Dark outlaw country — forged in loss, fire, and survival.</div>
-          </div>
-        </div>
-
-        <div class="list" aria-label="Music links">
-          <div class="row">
-            <div class="left">
-              <div class="icon" aria-hidden="true">🟢</div>
-              <div class="name">Spotify</div>
-            </div>
-            <a class="cta" href="https://open.spotify.com/artist/49tmro22O9gVMSERh0OFHw" target="_blank" rel="noopener">Open</a>
-          </div>
-
-          <div class="row">
-            <div class="left">
-              <div class="icon" aria-hidden="true">🍎</div>
-              <div class="name">Apple Music</div>
-            </div>
-            <a class="cta" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">Open</a>
-          </div>
-
-          <div class="row">
-            <div class="left">
-              <div class="icon" aria-hidden="true">🎵</div>
-              <div class="name">iTunes</div>
-            </div>
-            <a class="cta" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">Open</a>
-          </div>
-
-          <div class="row">
-            <div class="left">
-              <div class="icon" aria-hidden="true">▶️</div>
-              <div class="name">YouTube</div>
-            </div>
-            <a class="cta" href="https://www.youtube.com/@HunterWadeOfficial" target="_blank" rel="noopener">Open</a>
-          </div>
-        </div>
-
-        <div class="sectionTitle">Follow</div>
-        <div class="pillRow" aria-label="Social links">
-          <!-- Put your real links later. For now they can point to the homepage or # -->
-          <a class="pill" href="#" target="_blank" rel="noopener">Instagram</a>
-          <a class="pill" href="#" target="_blank" rel="noopener">TikTok</a>
-          <a class="pill" href="#" target="_blank" rel="noopener">Facebook</a>
-        </div>
-
-        <div class="sectionTitle">Contact / Booking</div>
-        <div class="contact">
-          <div class="contactRow">
-            <a class="emailLink" id="emailLink" href="mailto:contact@hunterwadeofficial.com">contact@hunterwadeofficial.com</a>
-            <button class="copyBtn" id="copyBtn" type="button">Copy Email</button>
-          </div>
-          <div class="foot">© 2026 Hunter Wade</div>
-        </div>
+  <main class="page">
+    <section class="card" aria-label="Hunter Wade official links">
+      <div class="hero" aria-hidden="true">
+        <!-- IMPORTANT: file must be named exactly hero.jpeg in the same folder -->
+        <img class="hero-img" src="hero.jpeg?v=1" alt="" />
+        <div class="hero-overlay"></div>
       </div>
-    </main>
-  </div>
+
+      <header class="header">
+        <div class="badge" aria-hidden="true">HW</div>
+        <div class="title-block">
+          <h1>HUNTER WADE</h1>
+          <p class="tagline">Dark outlaw country — forged in loss, fire, and survival.</p>
+        </div>
+      </header>
+
+      <section class="links" aria-label="Listen and follow">
+        <a class="link" href="https://open.spotify.com/artist/49tmro22O9gVMSERh0OFHw" target="_blank" rel="noopener">
+          <span class="left">
+            <span class="icon" aria-hidden="true">🎧</span>
+            <span class="label">Spotify</span>
+          </span>
+          <span class="pill">Open</span>
+        </a>
+
+        <a class="link" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">
+          <span class="left">
+            <span class="icon" aria-hidden="true"></span>
+            <span class="label">Apple Music</span>
+          </span>
+          <span class="pill">Open</span>
+        </a>
+
+        <a class="link" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">
+          <span class="left">
+            <span class="icon" aria-hidden="true">♪</span>
+            <span class="label">iTunes</span>
+          </span>
+          <span class="pill">Open</span>
+        </a>
+
+        <a class="link" href="https://www.youtube.com/@HunterWadeOfficial" target="_blank" rel="noopener">
+          <span class="left">
+            <span class="icon" aria-hidden="true">▶</span>
+            <span class="label">YouTube</span>
+          </span>
+          <span class="pill">Open</span>
+        </a>
+      </section>
+
+      <section class="follow" aria-label="Social links">
+        <h2>FOLLOW</h2>
+        <div class="socials">
+          <!-- Put your real links later (tonight). Keep # for now. -->
+          <a class="chip" href="#" target="_blank" rel="noopener">Instagram</a>
+          <a class="chip" href="#" target="_blank" rel="noopener">TikTok</a>
+          <a class="chip" href="#" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </section>
+
+      <section class="contact" aria-label="Contact">
+        <h2>CONTACT / BOOKING</h2>
+        <div class="email-row">
+          <a class="email"
+             href="mailto:contact@hunterwadeofficial.com?subject=Booking%20/%20Inquiry%20—%20Hunter%20Wade">
+            contact@hunterwadeofficial.com
+          </a>
+
+          <button class="copy" type="button" data-copy="contact@hunterwadeofficial.com" aria-label="Copy email">
+            Copy
+          </button>
+        </div>
+
+        <p class="fineprint">If clicking doesn’t open email on your PC, use the Copy button.</p>
+      </section>
+
+      <footer class="footer">© <span id="year"></span> Hunter Wade</footer>
+    </section>
+  </main>
 
   <script>
-    // Always works even if mailto isn't configured
-    const email = "contact@hunterwadeofficial.com";
-    const copyBtn = document.getElementById("copyBtn");
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    copyBtn.addEventListener("click", async () => {
+    const btn = document.querySelector(".copy");
+    btn?.addEventListener("click", async () => {
+      const text = btn.getAttribute("data-copy") || "";
       try {
-        await navigator.clipboard.writeText(email);
-        copyBtn.textContent = "Copied ✓";
-        setTimeout(() => (copyBtn.textContent = "Copy Email"), 1200);
+        await navigator.clipboard.writeText(text);
+        const old = btn.textContent;
+        btn.textContent = "Copied";
+        setTimeout(() => (btn.textContent = old), 900);
       } catch (e) {
-        // Fallback prompt
-        window.prompt("Copy this email:", email);
+        // Fallback
+        prompt("Copy this email:", text);
       }
     });
   </script>
