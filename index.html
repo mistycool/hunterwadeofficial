@@ -2,114 +2,332 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Hunter Wade — Official</title>
-  <meta name="description" content="Hunter Wade — dark outlaw country forged in loss, fire, and survival." />
-  <link rel="stylesheet" href="styles.css" />
-  <meta name="theme-color" content="#0b0b0b" />
+  <meta name="description" content="Hunter Wade — Dark outlaw country forged in loss, fire, and survival." />
+  <style>
+    :root{
+      --bg:#070707;
+      --panel:#0e0e0f;
+      --panel2:#101012;
+      --text:#f4f4f5;
+      --muted:#b5b5b8;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 30px 80px rgba(0,0,0,.65);
+      --accent:#ff6a1a; /* fire */
+      --accent2:#b84b14;
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1200px 800px at 50% -10%, rgba(255,106,26,.18), transparent 60%),
+        radial-gradient(900px 600px at 0% 30%, rgba(255,106,26,.10), transparent 55%),
+        radial-gradient(900px 600px at 100% 35%, rgba(255,106,26,.08), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px 16px;
+    }
+
+    .wrap{
+      width:min(980px, 100%);
+      display:flex;
+      justify-content:center;
+    }
+
+    .card{
+      width:min(520px, 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      position:relative;
+    }
+
+    /* HERO IMAGE BLOCK */
+    .hero{
+      height:210px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.70)),
+        url("hero.jpeg");
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid var(--line);
+      position:relative;
+    }
+
+    /* subtle fire glow edge */
+    .hero:after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(600px 220px at 30% 0%, rgba(255,106,26,.22), transparent 60%),
+        radial-gradient(600px 220px at 80% 10%, rgba(255,106,26,.14), transparent 62%);
+      pointer-events:none;
+      mix-blend-mode: screen;
+      opacity:.9;
+    }
+
+    .content{
+      padding:18px 18px 16px;
+    }
+
+    .top{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      margin-top:-36px;
+    }
+
+    .badge{
+      width:52px; height:52px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      letter-spacing:.06em;
+      color:#fff;
+      background: linear-gradient(180deg, rgba(255,106,26,.35), rgba(255,106,26,.12));
+      border:1px solid rgba(255,106,26,.28);
+      box-shadow: 0 10px 30px rgba(0,0,0,.55);
+      backdrop-filter: blur(6px);
+    }
+
+    h1{
+      margin:0;
+      font-size:28px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      line-height:1.1;
+    }
+
+    .tag{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:13.5px;
+    }
+
+    .list{
+      margin-top:14px;
+      display:grid;
+      gap:12px;
+    }
+
+    .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 14px;
+      border-radius:16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .left{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+
+    .icon{
+      width:26px; height:26px;
+      display:grid; place-items:center;
+      opacity:.92;
+      flex:0 0 auto;
+    }
+
+    .name{
+      font-weight:700;
+      letter-spacing:.02em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .cta{
+      text-decoration:none;
+      font-weight:700;
+      font-size:12px;
+      color:#fff;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,106,26,.35);
+      background: linear-gradient(180deg, rgba(255,106,26,.18), rgba(255,106,26,.08));
+      box-shadow: 0 10px 24px rgba(0,0,0,.35);
+    }
+    .cta:hover{ border-color: rgba(255,106,26,.60); }
+
+    .sectionTitle{
+      margin:18px 2px 10px;
+      font-size:12px;
+      color:rgba(255,255,255,.55);
+      letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+
+    .pillRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      text-decoration:none;
+      color:var(--text);
+      padding:9px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      font-weight:650;
+      font-size:13px;
+    }
+    .pill:hover{ border-color: rgba(255,106,26,.35); }
+
+    .contact{
+      margin-top:12px;
+      padding-top:12px;
+      border-top:1px solid rgba(255,255,255,.08);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .contactRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .emailLink{
+      color:var(--accent);
+      text-decoration:none;
+      border-bottom:1px dashed rgba(255,106,26,.55);
+      padding-bottom:2px;
+      font-weight:700;
+      word-break:break-word;
+    }
+    .emailLink:hover{ border-bottom-color: rgba(255,106,26,.9); }
+
+    .copyBtn{
+      cursor:pointer;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      padding:8px 12px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:12px;
+    }
+    .copyBtn:hover{ border-color: rgba(255,106,26,.35); }
+
+    .foot{
+      margin-top:10px;
+      color:rgba(255,255,255,.45);
+      font-size:12px;
+    }
+
+    /* Mobile */
+    @media (max-width:420px){
+      .hero{height:190px}
+      h1{font-size:24px}
+    }
+  </style>
 </head>
-
 <body>
-  <!-- Background -->
-  <div class="bg" aria-hidden="true"></div>
-  <div class="vignette" aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <main class="card" aria-label="Hunter Wade Official Links">
+      <div class="hero"></div>
 
-  <main class="wrap">
-    <section class="card" role="region" aria-label="Hunter Wade Links">
-
-      <header class="top">
-        <div class="badge" aria-label="Hunter Wade">HW</div>
-
-        <div class="titleBlock">
-          <h1>Hunter Wade</h1>
-          <p class="tagline">Dark outlaw country — forged in loss, fire, and survival.</p>
+      <div class="content">
+        <div class="top">
+          <div class="badge">HW</div>
+          <div>
+            <h1>Hunter Wade</h1>
+            <div class="tag">Dark outlaw country — forged in loss, fire, and survival.</div>
+          </div>
         </div>
-      </header>
 
-      <div class="divider"></div>
+        <div class="list" aria-label="Music links">
+          <div class="row">
+            <div class="left">
+              <div class="icon" aria-hidden="true">🟢</div>
+              <div class="name">Spotify</div>
+            </div>
+            <a class="cta" href="https://open.spotify.com/artist/49tmro22O9gVMSERh0OFHw" target="_blank" rel="noopener">Open</a>
+          </div>
 
-      <nav class="links" aria-label="Official links">
-        <a class="link" href="https://open.spotify.com/artist/49tmro22O9gVMSERh0OFHw" target="_blank" rel="noopener">
-          <span class="icon" aria-hidden="true">
-            <!-- Spotify -->
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M12 1.8c5.6 0 10.2 4.6 10.2 10.2S17.6 22.2 12 22.2 1.8 17.6 1.8 12 6.4 1.8 12 1.8Z" stroke="currentColor" stroke-width="1.6"/>
-              <path d="M7.1 10.4c3.6-1.1 7.2-.7 10.6 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M7.7 13c3-0.8 6-.5 8.7.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".9"/>
-              <path d="M8.3 15.5c2.2-0.6 4.4-.3 6.3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".8"/>
-            </svg>
-          </span>
-          <span class="label">Spotify</span>
-          <span class="pill">Follow</span>
-        </a>
+          <div class="row">
+            <div class="left">
+              <div class="icon" aria-hidden="true">🍎</div>
+              <div class="name">Apple Music</div>
+            </div>
+            <a class="cta" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">Open</a>
+          </div>
 
-        <a class="link" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">
-          <span class="icon" aria-hidden="true">
-            <!-- Apple Music -->
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M16.7 13.3V6.2c0-.9.7-1.6 1.6-1.6h.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M16.7 6.2l-7.9 1.7v10.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M7.2 19.3c1.2 0 2.2-.8 2.2-1.8s-1-1.8-2.2-1.8-2.2.8-2.2 1.8 1 1.8 2.2 1.8Z" stroke="currentColor" stroke-width="1.6"/>
-              <path d="M14.8 18.7c1.2 0 2.2-.8 2.2-1.8s-1-1.8-2.2-1.8-2.2.8-2.2 1.8 1 1.8 2.2 1.8Z" stroke="currentColor" stroke-width="1.6"/>
-            </svg>
-          </span>
-          <span class="label">Apple Music</span>
-          <span class="pill">Listen</span>
-        </a>
+          <div class="row">
+            <div class="left">
+              <div class="icon" aria-hidden="true">🎵</div>
+              <div class="name">iTunes</div>
+            </div>
+            <a class="cta" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">Open</a>
+          </div>
 
-        <a class="link" href="https://music.apple.com/us/album/echoes-of-the-devil-single/1863939327" target="_blank" rel="noopener">
-          <span class="icon" aria-hidden="true">
-            <!-- iTunes (simple note icon) -->
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M16.4 6.3 8.8 8v9.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M16.4 14.6V6.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M7.4 19.2c1.2 0 2.2-.8 2.2-1.8s-1-1.8-2.2-1.8-2.2.8-2.2 1.8 1 1.8 2.2 1.8Z" stroke="currentColor" stroke-width="1.6"/>
-              <path d="M14.6 18.6c1.2 0 2.2-.8 2.2-1.8s-1-1.8-2.2-1.8-2.2.8-2.2 1.8 1 1.8 2.2 1.8Z" stroke="currentColor" stroke-width="1.6"/>
-            </svg>
-          </span>
-          <span class="label">iTunes</span>
-          <span class="pill">Buy</span>
-        </a>
-
-        <a class="link" href="https://www.youtube.com/@HunterWadeOfficial" target="_blank" rel="noopener">
-          <span class="icon" aria-hidden="true">
-            <!-- YouTube -->
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M20.7 8.2a3 3 0 0 0-2.1-2.1C16.8 5.6 12 5.6 12 5.6s-4.8 0-6.6.5A3 3 0 0 0 3.3 8.2 31 31 0 0 0 3 12a31 31 0 0 0 .3 3.8 3 3 0 0 0 2.1 2.1c1.8.5 6.6.5 6.6.5s4.8 0 6.6-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 21 12a31 31 0 0 0-.3-3.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-              <path d="M10.4 9.6 15 12l-4.6 2.4V9.6Z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="label">YouTube</span>
-          <span class="pill">Watch</span>
-        </a>
-      </nav>
-
-      <div class="divider"></div>
-
-      <section class="mini">
-        <h2>Follow</h2>
-        <div class="miniRow">
-          <!-- Replace # with your real links tonight -->
-          <a class="miniBtn" href="#" target="_blank" rel="noopener">Instagram</a>
-          <a class="miniBtn" href="#" target="_blank" rel="noopener">TikTok</a>
-          <a class="miniBtn" href="#" target="_blank" rel="noopener">Facebook</a>
+          <div class="row">
+            <div class="left">
+              <div class="icon" aria-hidden="true">▶️</div>
+              <div class="name">YouTube</div>
+            </div>
+            <a class="cta" href="https://www.youtube.com/@HunterWadeOfficial" target="_blank" rel="noopener">Open</a>
+          </div>
         </div>
-      </section>
 
-      <section class="contact">
-        <h2>Contact / Booking</h2>
-        <a class="email" href="mailto:contact@hunterwadeofficial.com">contact@hunterwadeofficial.com</a>
-      </section>
+        <div class="sectionTitle">Follow</div>
+        <div class="pillRow" aria-label="Social links">
+          <!-- Put your real links later. For now they can point to the homepage or # -->
+          <a class="pill" href="#" target="_blank" rel="noopener">Instagram</a>
+          <a class="pill" href="#" target="_blank" rel="noopener">TikTok</a>
+          <a class="pill" href="#" target="_blank" rel="noopener">Facebook</a>
+        </div>
 
-      <footer class="foot">
-        <span>© <span id="year"></span> Hunter Wade</span>
-      </footer>
-    </section>
-  </main>
+        <div class="sectionTitle">Contact / Booking</div>
+        <div class="contact">
+          <div class="contactRow">
+            <a class="emailLink" id="emailLink" href="mailto:contact@hunterwadeofficial.com">contact@hunterwadeofficial.com</a>
+            <button class="copyBtn" id="copyBtn" type="button">Copy Email</button>
+          </div>
+          <div class="foot">© 2026 Hunter Wade</div>
+        </div>
+      </div>
+    </main>
+  </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Always works even if mailto isn't configured
+    const email = "contact@hunterwadeofficial.com";
+    const copyBtn = document.getElementById("copyBtn");
+
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(email);
+        copyBtn.textContent = "Copied ✓";
+        setTimeout(() => (copyBtn.textContent = "Copy Email"), 1200);
+      } catch (e) {
+        // Fallback prompt
+        window.prompt("Copy this email:", email);
+      }
+    });
   </script>
 </body>
 </html>
