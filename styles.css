@@ -229,12 +229,13 @@ p{
 }
 
 .page-hero{
-  padding:42px 34px;
+  padding:22px 34px;
   border-radius:var(--radius);
   border:1px solid var(--line);
   background:
-    linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025)),
+    linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02)),
     var(--panel);
+}
   box-shadow:0 24px 70px rgba(0,0,0,.5);
 }
 
